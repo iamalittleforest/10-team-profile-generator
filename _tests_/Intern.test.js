@@ -6,13 +6,13 @@ describe('Intern class', () => {
   });
 
   describe('getSchool method', () => {
-    it('Get Intern School', () => {
+    it('Get School of Intern', () => {
 
     })
   });
 
   describe('getRole method', () => {
-    it('Get Intern Role', () => {
+    it('Get Role of Intern', () => {
       
     })
   });

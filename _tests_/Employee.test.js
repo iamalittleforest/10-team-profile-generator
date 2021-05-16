@@ -6,25 +6,25 @@ describe('Employee class', () => {
   });
 
   describe('getName method', () => {
-    it('Get Employee Name', () => {
+    it('Get Name of Employee', () => {
 
     })
   });
 
   describe('getId method', () => {
-    it('Get Employee ID', () => {
+    it('Get ID of Employee', () => {
       
     })
   });
 
   describe('getEmail method', () => {
-    it('Get Employee Email', () => {
+    it('Get Email of Employee', () => {
       
     })
   });
 
   describe('getRole method', () => {
-    it('Get Employee Role', () => {
+    it('Get Role of Employee', () => {
       
     })
   });

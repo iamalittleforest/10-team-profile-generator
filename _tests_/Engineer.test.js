@@ -6,13 +6,13 @@ describe('Engineer class', () => {
   });
 
   describe('getGithub method', () => {
-    it('Get Engineer GitHub', () => {
+    it('Get GitHub of Engineer', () => {
 
     })
   });
 
   describe('getRole method', () => {
-    it('Get Engineer Role', () => {
+    it('Get Role of Engineer', () => {
       
     })
   });

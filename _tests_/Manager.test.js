@@ -6,13 +6,13 @@ describe('Manager class', () => {
   });
 
   describe('getOfficeNumber method', () => {
-    it('Get Manager Office Number', () => {
+    it('Get Office Number of Manager', () => {
 
     })
   });
 
   describe('getRole method', () => {
-    it('Get Manager Role', () => {
+    it('Get Role of Manager', () => {
       
     })
   });
