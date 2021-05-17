@@ -6,11 +6,11 @@ describe('Employee class', () => {
 
     expect(employee.name).toBe('Mayuri Shiina');
     expect(employee.id).toBe('002');
-    expect(employee.email).toBe('mayushii@futuregadgetlab.com')
+    expect(employee.email).toBe('mayushii@futuregadgetlab.com');
   });
 
   describe('getName method', () => {
-    it('Get Name of Employee', () => {
+    it('Should get the name of the Employee', () => {
       const employee = new Employee('Mayuri Shiina', '002', 'mayushii@futuregadgetlab.com');
 
       expect(employee.getName()).toBe('Mayuri Shiina');
@@ -18,7 +18,7 @@ describe('Employee class', () => {
   });
 
   describe('getId method', () => {
-    it('Get ID of Employee', () => {
+    it('Should get the ID number of the Employee', () => {
       const employee = new Employee('Mayuri Shiina', '002', 'mayushii@futuregadgetlab.com');
 
       expect(employee.getId()).toBe('002');
@@ -26,7 +26,7 @@ describe('Employee class', () => {
   });
 
   describe('getEmail method', () => {
-    it('Get Email of Employee', () => {
+    it('Should get the email address of the Employee', () => {
       const employee = new Employee('Mayuri Shiina', '002', 'mayushii@futuregadgetlab.com');
 
       expect(employee.getEmail()).toBe('mayushii@futuregadgetlab.com');
@@ -34,7 +34,7 @@ describe('Employee class', () => {
   });
 
   describe('getRole method', () => {
-    it('Get Role of Employee', () => {
+    it('Should get the role of the Employee', () => {
       const employee = new Employee('Mayuri Shiina', '002', 'mayushii@futuregadgetlab.com');
 
       expect(employee.getRole()).toBe('Employee');

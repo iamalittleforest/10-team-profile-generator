@@ -4,11 +4,14 @@ describe('Intern class', () => {
   it('Create new Intern object', () => {
     const intern = new Intern('Kurisu Makise', '004', 'christina@futuregadgetlab.com', 'Viktor Chondria University');
 
+    expect(intern.name).toBe('Kurisu Makise');
+    expect(intern.id).toBe('004');
+    expect(intern.email).toBe('christina@futuregadgetlab.com');
     expect(intern.school).toBe('Viktor Chondria University');
   });
 
   describe('getSchool method', () => {
-    it('Get School of Intern', () => {
+    it('Should get the school name of the Intern', () => {
       const intern = new Intern('Kurisu Makise', '004', 'christina@futuregadgetlab.com', 'Viktor Chondria University');
 
       expect(intern.getSchool()).toBe('Viktor Chondria University');
@@ -16,7 +19,7 @@ describe('Intern class', () => {
   });
 
   describe('getRole method', () => {
-    it('Get Role of Intern', () => {
+    it('Should get the role of the Intern', () => {
       const intern = new Intern('Kurisu Makise', '004', 'christina@futuregadgetlab.com', 'Viktor Chondria University');
 
       expect(intern.getRole()).toBe('Intern');
