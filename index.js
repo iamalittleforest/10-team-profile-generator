@@ -39,9 +39,9 @@ const manager = () => {
         // add validate
       }
     ])
-    .then((manager) => {
+    .then((response) => {
       // create manager object using responses
-      const manager = new Manager(manager.name, manager.id, manager.email, manager.officeNumber);
+      const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
 
       // add manager object to team array
       team.push(manager);
@@ -60,6 +60,7 @@ const addEmployee = () => {
       }
     ])
     .then((response) => {
+      // obtain info specific to the selected role
       if(response.addEmployee === 'Engineer') {
         return inquirer
           .prompt([
@@ -83,23 +84,53 @@ const addEmployee = () => {
             },
             {
               type: 'input',
-              name: 'officeNumber',
-              message: "What is the engineer's office number?"
-              // add validate
-            },
-            {
-              type: 'input',
               name: 'github',
               message: "What is the gngineer's GitHub username?"
             }
           ])
-          .then((engineer) => {
+          .then((response) => {
             // create engineer object using responses
-            const engineer = new Engineer(engineer.name, engineer.id, engineer.email, engineer.github);
+            const engineer = new Engineer(response.name, response.id, response.email, response.github);
 
-            // add manager object to team array
+            // add engineer object to team array
             team.push(engineer);
          })
+      } else if (response.addEmployee === 'Intern') {
+        return inquirer
+          .prompt([
+            {
+              type: 'input',
+              name: 'name',
+              message: "What is the intern's name?"
+              // add validate
+            },
+            {
+              type: 'input',
+              name: 'id',
+              message: "What is the intern's ID number?"
+              // add validate
+            },
+            {
+              type: 'input',
+              name: 'email',
+              message: "What is the intern's email address?"
+              // add validate
+            },
+            {
+              type: 'input',
+              name: 'school',
+              message: "What is the intern's school name?"
+            }
+          ])
+          .then((response) => {
+            // create intern object using responses
+            const intern = new Engineer(response.name, response.id, response.email, response.github);
+
+            // add intern object to team array
+            team.push(intern);
+        })
+      } else {
+
       }
     })
 }
