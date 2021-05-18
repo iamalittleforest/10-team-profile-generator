@@ -104,6 +104,15 @@ const managerPrompt = () => {
     
     // add engineer object to team array
     team.push(engineer);
+
+    // obtain info specific to the selected role
+    if(eResponse.addEmployee === 'Engineer') {
+      engineerPrompt();
+    } else if (eResponse.addEmployee === 'Intern') {
+      internPrompt();
+    } else {
+      generateHTML();
+    }
   })
 }     
   
@@ -148,12 +157,27 @@ const internPrompt = () => {
       
       // add intern object to team array
       team.push(intern);
+
+      // obtain info specific to the selected role
+      if(iResponse.addEmployee === 'Engineer') {
+        engineerPrompt();
+      } else if (iResponse.addEmployee === 'Intern') {
+        internPrompt();
+      } else {
+        generateHTML();
+      }
     })
   }
   
   // function to write data to file
-  const generateHTML = () => {
-
+  const generateHTML = (team) => {
+    // check on contents of team
+    console.log(team);
+    
+    // create HTML file
+    // fs.writeFile('./dist/team.html', team, (err) => {
+    //   err ? console.log(err) : console.log('Successfully created team.html!');
+    // }); 
   }
   
   // function to intialize data input
@@ -163,4 +187,4 @@ const internPrompt = () => {
 };
 
 // initialize
-init();
+init();  
