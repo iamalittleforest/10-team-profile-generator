@@ -45,6 +45,7 @@ const manager = () => {
 
       // add manager object to team array
       team.push(manager);
+      console.log(team);
     })
 }
 
@@ -94,6 +95,7 @@ const addEmployee = () => {
 
             // add engineer object to team array
             team.push(engineer);
+            console.log(team);
          })
       } else if (response.addEmployee === 'Intern') {
         return inquirer
@@ -124,18 +126,20 @@ const addEmployee = () => {
           ])
           .then((response) => {
             // create intern object using responses
-            const intern = new Engineer(response.name, response.id, response.email, response.github);
+            const intern = new Intern(response.name, response.id, response.email, response.school);
 
             // add intern object to team array
             team.push(intern);
+            console.log(team);
         })
       } else {
-
+        // how to end inquirer
       }
     })
 }
 
 // function to write data to file
+
 
 // function to intialize data input
 const init = () => {
