@@ -10,8 +10,8 @@ const Manager = require('./lib/Manager');
 // team
 const team = [];
 
-// function to obtain input
-const init = () => {
+// function to obtain manager info
+const manager = () => {
   return inquirer
     .prompt([
       {
@@ -49,6 +49,12 @@ const init = () => {
 }
 
 // function to write data to file
+
+// function to intialize data input
+const init = () => {
+  console.log("Please build your team");
+  manager();
+};
 
 // initialize
 init();
