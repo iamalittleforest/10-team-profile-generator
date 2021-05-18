@@ -11,5 +11,44 @@ const Manager = require('./lib/Manager');
 const team = [];
 
 // function to obtain input
+const init = () => {
+  return inquirer
+    .prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: "What is the team manager's name?"
+        // add validate
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: "What is the team manager's ID number?"
+        // add validate
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: "What is the team manager's email address?"
+        // add validate
+      },
+      {
+        type: 'input',
+        name: 'officeNumber',
+        message: "What is the team manager's office number?"
+        // add validate
+      }
+    ])
+    .then((manager) => {
+      // create manager object using responses
+      const manager = new Manager(manager.name, manager.id, manager.email, manager.officeNumber);
+
+      // add manager object to team array
+      team.push(manager);
+    })
+}
 
 // function to write data to file
+
+// initialize
+init();
