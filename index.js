@@ -7,7 +7,10 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern'); 
 const Manager = require('./lib/Manager');
 
-// team
+// read main.html
+const mainHTML = fs.readFileSync("./src/main.html", "utf8")
+
+// array to store all employees
 const team = [];
 
 // function to obtain manager info
@@ -61,11 +64,11 @@ const managerPrompt = () => {
         generateHTML();
       }
     })
-  }
+}
   
-  // function to obtain engineer info
-  const engineerPrompt = () => {
-    return inquirer
+// function to obtain engineer info
+const engineerPrompt = () => {
+  return inquirer
     .prompt([
       {
         type: 'input',
@@ -98,22 +101,22 @@ const managerPrompt = () => {
         choices: ['Engineer', 'Intern', 'None']
       }
     ])
-  .then((eResponse) => {
-    // create engineer object using responses
-    const engineer = new Engineer(eResponse.name, eResponse.id, eResponse.email, eResponse.github);
-    
-    // add engineer object to team array
-    team.push(engineer);
+    .then((eResponse) => {
+      // create engineer object using responses
+      const engineer = new Engineer(eResponse.name, eResponse.id, eResponse.email, eResponse.github);
+      
+      // add engineer object to team array
+      team.push(engineer);
 
-    // obtain info specific to the selected role
-    if(eResponse.addEmployee === 'Engineer') {
-      engineerPrompt();
-    } else if (eResponse.addEmployee === 'Intern') {
-      internPrompt();
-    } else {
-      generateHTML();
-    }
-  })
+      // obtain info specific to the selected role
+      if(eResponse.addEmployee === 'Engineer') {
+        engineerPrompt();
+      } else if (eResponse.addEmployee === 'Intern') {
+        internPrompt();
+      } else {
+        generateHTML();
+      }
+    })
 }     
   
 // function to obtain intern info
@@ -169,22 +172,25 @@ const internPrompt = () => {
     })
   }
   
-  // function to write data to file
-  const generateHTML = (team) => {
-    // check on contents of team
-    console.log(team);
-    
-    // create HTML file
-    // fs.writeFile('./dist/team.html', team, (err) => {
-    //   err ? console.log(err) : console.log('Successfully created team.html!');
-    // }); 
-  }
-  
-  // function to intialize data input
-  const init = () => {
-    console.log("Please build your team");
-    managerPrompt();
+// function to intialize data input
+const init = () => {
+  console.log("Please build your team");
+  managerPrompt();
 };
+
+// function to render HTML from team 
+const renderHTML = (team) => {
+return team.map(a => a.createHTML()).join('\n');
+}
+  
+// function to generate HTML file
+const generateHTML = () => {
+  
+  // write HTML file
+  fs.writeFile('./dist/team.html', mainHTML.replace("{{body}}", renderHTML(team)), (err) => {
+    err ? console.log(err) : console.log('Successfully created team.html!');
+  }); 
+}
 
 // initialize
 init();  
