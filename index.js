@@ -2,7 +2,7 @@
 const fs = require('fs'); 
 const inquirer = require('inquirer');
 
-// import team roles
+// import team classes
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern'); 
 const Manager = require('./lib/Manager');
@@ -21,25 +21,21 @@ const managerPrompt = () => {
         type: 'input',
         name: 'name',
         message: "What is the team manager's name?"
-        // add validate
       },
       {
-        type: 'input',
+        type: 'number',
         name: 'id',
         message: "What is the team manager's ID number?"
-        // add validate
       },
       {
         type: 'input',
         name: 'email',
         message: "What is the team manager's email address?"
-        // add validate
       },
       {
-        type: 'input',
+        type: 'number',
         name: 'officeNumber',
         message: "What is the team manager's office number?"
-        // add validate
       },
       {
         type: 'list',
@@ -74,25 +70,21 @@ const engineerPrompt = () => {
         type: 'input',
         name: 'name',
         message: "What is the engineer's name?"
-        // add validate
       },
       {
-        type: 'input',
+        type: 'number',
         name: 'id',
         message: "What is the engineer's ID number?"
-        // add validate
       },
       {
         type: 'input',
         name: 'email',
         message: "What is the engineer's email address?"
-        // add validate
       },
       {
         type: 'input',
         name: 'github',
         message: "What is the engineer's GitHub username?"
-        // add validate
       },
       {
         type: 'list',
@@ -127,25 +119,21 @@ const internPrompt = () => {
           type: 'input',
           name: 'name',
           message: "What is the intern's name?"
-          // add validate
         },
         {
-          type: 'input',
+          type: 'number',
           name: 'id',
           message: "What is the intern's ID number?"
-          // add validate
         },
         {
           type: 'input',
           name: 'email',
           message: "What is the intern's email address?"
-          // add validate
         },
         {
           type: 'input',
           name: 'school',
           message: "What is the intern's school name?"
-          // add validate
         },
         {
           type: 'list',
@@ -178,9 +166,9 @@ const init = () => {
   managerPrompt();
 };
 
-// function to render HTML from team 
+// function to render HTML from team array
 const renderHTML = (team) => {
-return team.map(a => a.createHTML()).join('\n');
+return team.map(a => a.createHTML()).join("");
 }
   
 // function to generate HTML file
