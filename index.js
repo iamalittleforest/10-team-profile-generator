@@ -44,17 +44,17 @@ const managerPrompt = () => {
         choices: ['Engineer', 'Intern', 'None']
       }
     ])
-    .then((mResponse) => {
+    .then((mRes) => {
       // create manager object using responses
-      const manager = new Manager(mResponse.name, mResponse.id, mResponse.email, mResponse.officeNumber);
+      const manager = new Manager(mRes.name, mRes.id, mRes.email, mRes.officeNumber);
 
       // add manager object to team array
       team.push(manager);
       
       // obtain info specific to the selected role
-      if(mResponse.addEmployee === 'Engineer') {
+      if(mRes.addEmployee === 'Engineer') {
         engineerPrompt();
-      } else if (mResponse.addEmployee === 'Intern') {
+      } else if (mRes.addEmployee === 'Intern') {
         internPrompt();
       } else {
         generateHTML();
@@ -93,17 +93,17 @@ const engineerPrompt = () => {
         choices: ['Engineer', 'Intern', 'None']
       }
     ])
-    .then((eResponse) => {
+    .then((eRes) => {
       // create engineer object using responses
-      const engineer = new Engineer(eResponse.name, eResponse.id, eResponse.email, eResponse.github);
+      const engineer = new Engineer(eRes.name, eRes.id, eRes.email, eRes.github);
       
       // add engineer object to team array
       team.push(engineer);
 
       // obtain info specific to the selected role
-      if(eResponse.addEmployee === 'Engineer') {
+      if(eRes.addEmployee === 'Engineer') {
         engineerPrompt();
-      } else if (eResponse.addEmployee === 'Intern') {
+      } else if (eRes.addEmployee === 'Intern') {
         internPrompt();
       } else {
         generateHTML();
@@ -142,17 +142,17 @@ const internPrompt = () => {
           choices: ['Engineer', 'Intern', 'None']
         }
       ])
-    .then((iResponse) => {
+    .then((iRes) => {
       // create intern object using responses
-      const intern = new Intern(iResponse.name, iResponse.id, iResponse.email, iResponse.school);
+      const intern = new Intern(iRes.name, iRes.id, iRes.email, iRes.school);
       
       // add intern object to team array
       team.push(intern);
 
       // obtain info specific to the selected role
-      if(iResponse.addEmployee === 'Engineer') {
+      if(iRes.addEmployee === 'Engineer') {
         engineerPrompt();
-      } else if (iResponse.addEmployee === 'Intern') {
+      } else if (iRes.addEmployee === 'Intern') {
         internPrompt();
       } else {
         generateHTML();
@@ -174,11 +174,11 @@ return team.map(a => a.createHTML()).join("");
 // function to generate HTML file
 const generateHTML = () => {
   
-  // write HTML file
+  // write HTML file using mainHTML and renderHTML
   fs.writeFile('./dist/team.html', mainHTML.replace("{{body}}", renderHTML(team)), (err) => {
     err ? console.log(err) : console.log('Successfully created team.html!');
   }); 
 }
 
 // initialize
-init();  
+init();
