@@ -29,4 +29,29 @@ describe("Intern class", () => {
       expect(intern.getRole()).toBe("Intern");
     })
   });
+
+  describe("createHTML method", () => {
+    it("Should output HTML specific to the Intern", () => {
+      const intern = new Intern(name, id, email, school);
+
+      expect(intern.createHTML()).toContain(`
+      <div class="col p-0">
+        <div class="card m-3">
+          <div class="card-header text-white text-center intern-bg name-font">
+              <h4>Kurisu Makise</h4>
+              <h4><i class="fas fa-graduation-cap"></i> Intern</h4>
+          </div>
+          <div class="card-body body-bg">
+            <ul class="list-group list-group-flush text">
+              <li class="list-group-item"><b>ID:</b> 004</li>
+              <li class="list-group-item"><b>Email:</b> christina@fglab.com</li>
+              <li class="list-group-item"><b>School:</b> Viktor Chondria University</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      `
+      );
+    })
+  })
 });
