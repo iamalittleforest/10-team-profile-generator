@@ -23,7 +23,7 @@ const managerPrompt = () => {
         message: "What is the team manager's name?"
       },
       {
-        type: 'number',
+        type: 'input',
         name: 'id',
         message: "What is the team manager's ID number?"
       },
@@ -33,7 +33,7 @@ const managerPrompt = () => {
         message: "What is the team manager's email address?"
       },
       {
-        type: 'number',
+        type: 'input',
         name: 'officeNumber',
         message: "What is the team manager's office number?"
       },
@@ -72,7 +72,7 @@ const engineerPrompt = () => {
         message: "What is the engineer's name?"
       },
       {
-        type: 'number',
+        type: 'input',
         name: 'id',
         message: "What is the engineer's ID number?"
       },
@@ -121,7 +121,7 @@ const internPrompt = () => {
           message: "What is the intern's name?"
         },
         {
-          type: 'number',
+          type: 'input',
           name: 'id',
           message: "What is the intern's ID number?"
         },
