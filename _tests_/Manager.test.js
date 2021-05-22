@@ -1,11 +1,14 @@
+// import Manager class
 const Manager = require('../lib/Manager');
+
+// create variables to hold Manager Info
 const name = "Rintaro Okabe";
 const id = "001";
 const email = "okarin@fglab.com";
 const officeNumber = "5100";
 
 describe("Manager class", () => {
-  it("Create new Manager object", () => {
+  it("Should create new Manager object", () => {
     const manager = new Manager(name, id, email, officeNumber);
 
     expect(manager.name).toBe("Rintaro Okabe");

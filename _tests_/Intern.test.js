@@ -1,11 +1,14 @@
+// import Intern class
 const Intern = require('../lib/Intern');
+
+// create variables to hold Intern Info
 const name = "Kurisu Makise";
 const id = "004";
 const email = "christina@fglab.com";
 const school = "Viktor Chondria University";
 
 describe("Intern class", () => {
-  it("Create new Intern object", () => {
+  it("Should create new Intern object", () => {
     const intern = new Intern(name, id, email, school);
 
     expect(intern.name).toBe("Kurisu Makise");

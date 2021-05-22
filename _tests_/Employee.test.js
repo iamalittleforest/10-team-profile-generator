@@ -1,13 +1,16 @@
+// import Employee class
 const Employee = require('../lib/Employee');
+
+// create variables to hold Employee Info
 const name = "Mayuri Shiina";
 const id = "002";
 const email = "mayushii@fglab.com";
 
 describe("Employee class", () => {
-  it("Create new Employee object", () => { 
+  it("Should create new Employee object", () => { 
     const employee = new Employee(name, id, email);
 
-    expect(employee.name).toBe(name);
+    expect(employee.name).toBe("Mayuri Shiina");
     expect(employee.id).toBe("002");
     expect(employee.email).toBe("mayushii@fglab.com");
   });
