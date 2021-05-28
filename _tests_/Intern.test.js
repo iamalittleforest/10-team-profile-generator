@@ -47,7 +47,7 @@ describe("Intern class", () => {
           <div class="card-body body-bg">
             <ul class="list-group list-group-flush text">
               <li class="list-group-item"><b>ID:</b> 004</li>
-              <li class="list-group-item"><b>Email:</b> christina@fglab.com</li>
+              <li class="list-group-item"><b>Email:</b> <a href="mailto:christina@fglab.com">christina@fglab.com</a></li>
               <li class="list-group-item"><b>School:</b> Viktor Chondria University</li>
             </ul>
           </div>

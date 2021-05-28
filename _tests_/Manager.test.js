@@ -47,7 +47,7 @@ describe("Manager class", () => {
           <div class="card-body body-bg">
             <ul class="list-group list-group-flush text">
               <li class="list-group-item"><b>ID:</b> 001</li>
-              <li class="list-group-item"><b>Email:</b> okarin@fglab.com</li>
+              <li class="list-group-item"><b>Email:</b> <a href="mailto:okarin@fglab.com">okarin@fglab.com</a></li>
               <li class="list-group-item"><b>Office Number:</b> 5100</li>
             </ul>
           </div>
