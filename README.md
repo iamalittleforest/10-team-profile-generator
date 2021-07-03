@@ -7,7 +7,7 @@
 * Jest Package
 
 ## Description
-This application takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
+An application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
 ## Screenshot
 <img src="assets/images/README-screenshot.png" alt="screenshot">
